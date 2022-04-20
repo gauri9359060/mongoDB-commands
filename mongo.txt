@@ -1,0 +1,33 @@
+//for creating a database
+use assignment
+
+//for creating a collection
+db.createCollection("users")
+
+// To insert a single user
+db.getCollection("users").insert({"firstName":"gauri", "lastName" :"patil","email":"gaurip388@gmail.com", "gender":"Female","ip_address":"1.2.1.2", "Age":22})
+
+//To insert many users
+db.getCollection("users").insertMany([{"firstName":"gauri", "lastName" :"patil","email":"gaurip388@gmail.com", "gender":"Female","ip_address":"1.2.1.2", "Age":22},
+{"firstName":"gauri", "lastName" :"patil","email":"gaurip388@gmail.com", "gender":"Female","ip_address":"1.2.1.2", "Age":22},
+{"firstName":"gauri", "lastName" :"patil","email":"gaurip388@gmail.com", "gender":"Female","ip_address":"1.2.1.2", "Age":22}.
+{"firstName":"gauri", "lastName" :"patil","email":"gaurip388@gmail.com", "gender":"Female","ip_address":"1.2.1.2", "Age":22},
+{"firstName":"gauri", "lastName" :"patil","email":"gaurip388@gmail.com", "gender":"Female","ip_address":"1.2.1.2", "Age":22}])
+
+//for finding all the users
+db.getCollection("users").find({}).pretty();
+
+//for finding one user
+db.getCollection("users").find({"lastName" : "patil"}).pretty();
+
+//for update one user
+db.getCollection("users").update({"Lastname":"patil"},{$set:{"Lastname":"kapoor"}})
+
+//for update many
+db.users.updateMany({"firstName": "gauri"}, {$set: {"age": "23"}})
+
+//for removing data from database
+db.users.remove({"firstName": "gauri"})
+
+//for removing database
+db.dropDatabase()
